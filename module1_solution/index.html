@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="Module1Assignemt">
+  <head>
+    <meta charset="utf-8">
+    <title>Module 1 - Assignement Solution</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <h1>Module 1 - Assignment Solution</h1>
+    <br>
+    <br>
+    <div ng-controller="Module1AssignemtController">
+      <div>
+        Enter comma-separated items for lunch:
+        <input type="text"
+              ng-model="lunchItems"
+              ng-keyup="resetMessage();">
+        <button type="button" ng-click="checkLunchItems();">Check If Too Much</button>
+        <br><br>
+        <span >{{outPutMessage}}</span>
+      </div>
+    </div>
+  </body>
+</html>
