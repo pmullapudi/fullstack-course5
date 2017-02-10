@@ -24,10 +24,9 @@
       }
       else {
         $scope.outPutMessage = "Too much!";
-        $scope.fontColor = "green";
       }
 
     };
-    
+
   }
 })();
