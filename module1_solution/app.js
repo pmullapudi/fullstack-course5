@@ -26,15 +26,12 @@
       }
       else if(numberOfItems < 4) {
         $scope.outputMessage = " Enjoy! ";
-        // $scope.messageStyle = {"color":"green"};
         $scope.boxStyle = {"border-color": "green"};
       }
       else {
         $scope.outputMessage = " Too much! ";
-        // $scope.messageStyle = {"color":"green"};
         $scope.boxStyle = {"border-color": "green"};
       }
-
     };
 
   }
