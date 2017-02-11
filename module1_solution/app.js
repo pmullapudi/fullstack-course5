@@ -4,26 +4,35 @@
   .controller("Module1AssignemtController", Module1AssignemtController);
 
   Module1AssignemtController.$inject = ["$scope"];
+
   function Module1AssignemtController ($scope) {
 
     $scope.lunchItems = "";
-    $scope.outPutMessage = "";
+    $scope.outputMessage = "";
 
     $scope.resetMessage = function () {
-      $scope.outPutMessage = "";
+      $scope.outputMessage = "";
+      $scope.messageStyle = {"color":"green"};
+      $scope.boxStyle = {"border-color": ""};
     };
 
     $scope.checkLunchItems = function () {
-      var lunitemsArray = $scope.lunchItems.split(',');
+      const numberOfItems = $scope.lunchItems.split(',').filter(el => el.trim()).length;
 
-      if ($scope.lunchItems.length == 0) {
-        $scope.outPutMessage = "Please enter data first";
+        if (numberOfItems === 0) {
+        $scope.outputMessage = "Please enter data first";
+        $scope.messageStyle = {"color":"red"};
+        $scope.boxStyle = {"border-color": "red"};
       }
-      else if(lunitemsArray.length <= 3) {
-          $scope.outPutMessage = "Enjoy!";
+      else if(numberOfItems < 4) {
+        $scope.outputMessage = " Enjoy! ";
+        // $scope.messageStyle = {"color":"green"};
+        $scope.boxStyle = {"border-color": "green"};
       }
       else {
-        $scope.outPutMessage = "Too much!";
+        $scope.outputMessage = " Too much! ";
+        // $scope.messageStyle = {"color":"green"};
+        $scope.boxStyle = {"border-color": "green"};
       }
 
     };

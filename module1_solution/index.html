@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html ng-app="Module1Assignemt">
+<html lang="en" ng-app="Module1Assignemt">
   <head>
-    <meta charset="utf-8">
-    <title>Module 1 - Assignement Solution</title>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
   </head>
-  <body>
-    <h1>Module 1 - Assignment Solution</h1>
-    <br>
-    <br>
-    <div ng-controller="Module1AssignemtController">
-      <div>
-        Enter comma-separated items for lunch:
-        <input type="text"
-              ng-model="lunchItems"
-              ng-keyup="resetMessage();">
-        <button type="button" ng-click="checkLunchItems();">Check If Too Much</button>
-        <br><br>
-        <span >{{outPutMessage}}</span>
-      </div>
-    </div>
-  </body>
+<body ng-controller="Module1AssignemtController">
+   <div class="container">
+     <h1>Lunch Checker</h1>
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             class="form-control" ng-model="lunchItems"
+             placeholder="list comma separated dishes you usually have for lunch"
+             ng-keyup="resetMessage();"
+             ng-style="boxStyle">
+         </div>
+         <div class="form-group">
+           <button class="btn btn-default" ng-click="checkLunchItems();">
+            Check If Too Much</button>
+            <span>* any empty item, i.e., <code>, ,</code> will NOT be considered as an item.</span>
+         </div>
+         <div class="form-group message" ng-style="messageStyle">
+          {{outputMessage}}
+         </div>
+   </div>
+
+</body>
 </html>
