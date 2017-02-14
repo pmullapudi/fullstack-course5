@@ -1,9 +1,3 @@
-//starter code ShoppingListCheckOff
-//ToBuyController
-//AlreadyBoughtController
-//ShoppingListCheckOffService
-
-
 (function () {
   'use strict';
 
@@ -11,7 +5,6 @@
   .controller('ToBuyController', ToBuyController)
   .controller('AlreadyBoughtController', AlreadyBoughtController)
   .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
-
 
   ToBuyController.inject = ['ShoppingListCheckOffService'];
   function ToBuyController (ShoppingListCheckOffService) {
@@ -30,10 +23,10 @@
     var boughtList = this;
 
     boughtList.items = ShoppingListCheckOffService.getBoughtItems();
-
   }
 
   function ShoppingListCheckOffService() {
+
     var service = this;
 
     var toBuyItems = [{ name: "Cookies", quantity: 10 },
@@ -58,8 +51,6 @@
       return boughtItems;
     };
 
-
   }
-
 
 })();
