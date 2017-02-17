@@ -4,7 +4,17 @@
   angular.module('NarrowItDownApp', [])
   .controller('NarrowItDownController', NarrowItDownController)
   .service('MenuSearchService', MenuSearchService)
-  .constant('ApiBaseURL', 'https://davids-restaurant.herokuapp.com');
+  .constant('ApiBaseURL', 'https://davids-restaurant.herokuapp.com')
+  .directive('foundItems', FoundItemsDirective);
+
+
+  function FoundItemsDirective() {
+    var ddo = {
+      templateUrl: 'foundItems.html'
+    };
+
+    return ddo;
+  }
 
   NarrowItDownController.$inject = ['MenuSearchService'];
   function NarrowItDownController (MenuSearchService) {

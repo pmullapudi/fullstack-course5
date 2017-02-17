@@ -23,28 +23,8 @@
 
     <!-- <found-items found-items="...." on-remove="...."></found-items> -->
 
-  </div>
+    <found-items></found-items>
 
-  <div ng-show="narrowItCtrl.found.length">
-    <table>
-      <tr>
-        <td> </td>
-        <td>Menu Item Name</td>
-        <td>Short Name</td>
-        <td>Description</td>
-      </tr>
-        <tr ng-repeat="item in narrowItCtrl.found">
-          <td>
-            <button type="button" class="table-button"
-                    ng-click="narrowItCtrl.removeItem($index);">Don't want this one!</button>
-          </td>
-          <td>{{item.name}}</td>
-          <td>{{item.short_name}}</td>
-          <td>{{item.description}}</td>
-        </tr>
-    </table>
   </div>
-  <div class="error" ng-if="narrowItCtrl.showNothingFound"> Nothing found </div>
-
 </body>
 </html>
