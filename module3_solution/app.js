@@ -10,10 +10,22 @@
 
   function FoundItemsDirective() {
     var ddo = {
-      templateUrl: 'foundItems.html'
+      templateUrl: 'foundItems.html',
+      scope: {
+        found: '<',
+        onRemove: '&',
+        showNothingFound: '='
+      },
+      controller: FoundItemsDirectiveController,
+      controllerAs: 'direcCtrl',
+      bindToController: true
     };
 
     return ddo;
+  }
+
+  function FoundItemsDirectiveController() {
+    var direcCtrl = this;
   }
 
   NarrowItDownController.$inject = ['MenuSearchService'];

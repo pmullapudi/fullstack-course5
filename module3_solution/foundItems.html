@@ -1,4 +1,4 @@
-<div class="col-xs-12" ng-show="narrowItCtrl.found.length">
+<div class="col-xs-12" ng-show="direcCtrl.found.length">
   <table>
     <tr>
       <td> </td>
@@ -6,10 +6,10 @@
       <td>Short Name</td>
       <td>Description</td>
     </tr>
-      <tr ng-repeat="item in narrowItCtrl.found">
+      <tr ng-repeat="item in direcCtrl.found">
         <td>
           <button type="button" class="table-button"
-                  ng-click="narrowItCtrl.removeItem($index);">Don't want this one!</button>
+                  ng-click="direcCtrl.onRemove({index: $index});">Don't want this one!</button>
         </td>
         <td>{{item.name}}</td>
         <td>{{item.short_name}}</td>
@@ -17,4 +17,4 @@
       </tr>
   </table>
 </div>
-<div class="error col-xs-12" ng-if="narrowItCtrl.showNothingFound"> Nothing found </div>
+<div class="error col-xs-12" ng-if="direcCtrl.showNothingFound"> Nothing found </div>
