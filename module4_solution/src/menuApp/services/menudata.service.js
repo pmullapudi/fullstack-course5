@@ -25,7 +25,7 @@
         method: "GET",
         url: (ApiBaseURL + '/menu_items.json?category=' + categoryShortName)
       });
-
+      
       return response;
     };
 
