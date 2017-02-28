@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <td class="header"> ID </td>
+    <td class="header"> Name </td>
+    <td class="header"> Short Name </td>
+    <td class="header"> Description </td>
+  </tr>
+    <tr ng-repeat="item in $ctrl.items">
+      <td> {{item.id}} </td>
+      <td> {{item.name}} </td>
+      <td> {{item.short_name}} </td>
+      <td> {{item.description}} </td>
+    </tr>
+</table>

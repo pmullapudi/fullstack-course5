@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <td class="header"> ID </td>
+    <td class="header"> Category Name </td>
+    <td class="header"> Short Name </td>
+  </tr>
+    <tr ng-repeat="item in $ctrl.items">
+      <td> {{item.id}} </td>
+      <td> {{item.name}} </td>
+      <td> <a ui-sref="itemsUnderCategory({shortName : item.short_name})">{{item.short_name}}</a> </td>
+    </tr>
+</table>

@@ -5,7 +5,6 @@
     .service('MenuDataService', MenuDataService)
     .constant('ApiBaseURL', 'https://davids-restaurant.herokuapp.com');
 
-
   MenuDataService.$inject = ['$http', 'ApiBaseURL'];
   function MenuDataService($http, ApiBaseURL) {
 
@@ -25,7 +24,7 @@
         method: "GET",
         url: (ApiBaseURL + '/menu_items.json?category=' + categoryShortName)
       });
-      
+      console.log("shortName :", categoryShortName);
       return response;
     };
 
