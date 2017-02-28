@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('data')
-    .component('menuItemsComp', {
+    .component('itemsComp', {
       templateUrl: 'src/menuApp/components/items/items.component.html',
       bindings: {
         items: '<'
