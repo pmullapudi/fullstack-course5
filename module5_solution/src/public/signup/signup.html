@@ -1,0 +1,129 @@
+
+
+
+
+<!-- <p>first name, last name, email address, and phone number</p>
+<br>
+<p>It should also ask the user to specify the menu number that's their favorite dish.
+  (The menu number is the short_name attribute of each menu item).</p> -->
+
+  <div class="container">
+    <h2>Sign Up</h2>
+    <fieldset>
+      <legend>Sign Up by filling the details below.</legend>
+
+      <form name='regForm' novalidate>
+
+        <!-- <div style="margin-top: 10px;">
+          Form valid? {{ regForm.$valid }}
+        </div> -->
+
+        <div>
+          <table>
+            <tr>First Name:</tr>
+            <tr>
+              <input type="text" name="firstName" placeholder="First Name"
+                ng-model="signupCtrl.user.firstName"
+                required
+                minlength="4"
+                ng-maxlength="10">
+                <span
+                  ng-if="(regForm.firstName.$error.minlength || regForm.firstName.$error.required) && regForm.firstName.$touched">
+                  First Name must be at least 4 characters long
+                </span>
+                <span ng-if="regForm.firstName.$error.maxlength && regForm.firstName.$touched">
+                  First Name must not be longer than 10 characters
+                </span>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr>Last Name:</tr>
+            <tr>
+              <input type="text" name="lastName" placeholder="Last Name"
+                ng-model="signupCtrl.user.lastName"
+                required
+                minlength="4"
+                ng-maxlength="10">
+                <span
+                  ng-if="(regForm.lastName.$error.minlength || regForm.lastName.$error.required) && regForm.lastName.$touched">
+                  Last Name must be at least 4 characters long
+                </span>
+                <span ng-if="regForm.lastName.$error.maxlength && regForm.lastName.$touched">
+                  Last Name must not be longer than 10 characters
+                </span>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr>Email:</tr>
+            <tr>
+              <input type="email" name="email" placeholder="Email"
+                ng-model="signupCtrl.user.email"
+                required>
+                <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+                  Must be a valid email address: handle@domain format
+                </span>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr>Phone Number:</tr>
+            <tr>
+              <input type="text" name="phone" placeholder="Phone ###-###-####"
+                ng-model="signupCtrl.user.phone"
+                pattern="(\d{3})-(\d{3})-(\d{4})">
+                <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+                  Phone must be in the format ###-###-####.
+                </span>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr>Favorite Dish:</tr>
+            <tr>
+              <input type="text" name="favoriteDish" placeholder="Menu Item ShortName"
+                ng-model="signupCtrl.user.favoriteDishName"
+                required
+                minlength="1"
+                ng-maxlength="2">
+                <span
+                  ng-if="(regForm.favoriteDish.$error.minlength || regForm.favoriteDish.$error.required) && regForm.favoriteDish.$touched">
+                  Menu Item ShortName must be at least 1 character long
+                </span>
+                <span ng-if="regForm.favoriteDish.$error.maxlength && regForm.favoriteDish.$touched">
+                  Menu Item ShortName must not be longer than 2 characters
+                </span>
+            </tr>
+          </table>
+
+
+        </div>
+        <div>
+          <table>
+            <tr></tr>
+            <tr></tr>
+          </table>
+          <button
+            ng-disabled="regForm.$invalid"
+            ng-click="signupCtrl.submit()">Submit</button>
+
+        </div>
+
+      </form>
+    </fieldset>
+
+      <div id="info" ng-if="signupCtrl.completed">
+        User:<br>
+        First Name: {{ signupCtrl.user.firstName}} <br>
+        Last Name: {{ signupCtrl.user.lastName}} <br>
+        Email: {{ signupCtrl.user.email}} <br>
+        Phone: {{ signupCtrl.user.phone }}<br>
+        Favorite Dish Name: {{ signupCtrl.user.favoriteDishName }}
+    </div>
+
+  </div>
