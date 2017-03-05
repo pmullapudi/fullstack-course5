@@ -4,8 +4,8 @@
   angular.module('common')
     .service("UserInfoService", UserInfoService);
 
-    UserInfoService.$inject = ['$http', 'ApiPath'];
-    function UserInfoService($http, ApiPath) {
+    UserInfoService.$inject = [];
+    function UserInfoService() {
 
       var service = this;
       var userInfo = {};
@@ -15,7 +15,6 @@
       };
 
       service.setUserInfo = function (savedUser) {
-        userInfo = {};
         userInfo = savedUser;
       };
 
