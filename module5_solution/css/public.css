@@ -187,7 +187,7 @@ h3.menu-item-title {
 /********form styles*******************/
 
 button {
-  margin-left: 120px;
+  margin-left: 180px;
   vertical-align: middle;
   font-size: 30px;
 }
@@ -201,7 +201,7 @@ button {
 }
 
 label {
-  width: 120px;
+  width: 200px;
   display: inline-block;
 }
 
