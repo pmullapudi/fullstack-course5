@@ -58,12 +58,12 @@
             ng-model="signupCtrl.favoriteMenuId"
             required
             minlength="2"
-            ng-maxlength="3">
+            ng-maxlength="4">
           <span ng-if="(regForm.favoriteDish.$error.minlength || regForm.favoriteDish.$error.required) && regForm.favoriteDish.$touched">
               Menu Item ID must be at least 2 character long
           </span>
           <span ng-if="regForm.favoriteDish.$error.maxlength">
-              Menu Item ID must not be longer than 3 characters
+              Menu Item ID must not be longer than 4 characters
           </span>
         </div>
         <div>
