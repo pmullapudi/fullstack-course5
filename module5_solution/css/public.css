@@ -185,21 +185,34 @@ h3.menu-item-title {
 }
 
 /********form styles*******************/
-input {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+
 button {
-  font-size: 24px;
+  margin-left: 120px;
+  vertical-align: middle;
+  font-size: 30px;
 }
 
 .ng-touched.ng-valid {
-  border: 2px green solid;
+  border: 4px green solid;
 }
 
 .ng-touched.ng-invalid {
   border: 2px red solid;
 }
+
+label {
+  width: 120px;
+  display: inline-block;
+}
+
+input {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  display: inline-block;
+}
+/*
 #info {
   margin-top: 20px;
-}
+}*/

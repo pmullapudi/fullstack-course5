@@ -46,10 +46,6 @@ function routeConfig ($stateProvider) {
       templateUrl: 'src/public/signup/signup.html',
       controller: 'SignupController',
       controllerAs: 'signupCtrl'
-      // resolve: {
-      //   shortNameList: ["UserInfoService", function (UserInfoService) {
-      //     return UserInfoService.getValidShortNames();
-      //   }]
       })
     .state('public.myinfo', {
       url: '/myinfo',

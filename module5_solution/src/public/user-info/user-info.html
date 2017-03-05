@@ -1,12 +1,21 @@
 
 <div class="container">
+  <h2 class="text-center">My Info</h3>
+  <legend></legend>
 
-  <h2>My Info</h3>
-<!--
-  <div>
-    to display user Info
-  </div>   -->
+  <div id="info" ng-show="userInfoCtrl.userObj.completed">
+    <h4 class="text-center">Saved User Info:</h4>
+    <p class="text-left">First Name: {{ userInfoCtrl.userObj.firstName}}</p>
+    <p class="text-left">Last Name: {{ userInfoCtrl.userObj.lastName}}</p>
+    <p class="text-left">Email: {{ userInfoCtrl.userObj.email}}</p>
+    <p class="text-left">Phone: {{ userInfoCtrl.userObj.phone }}</p>
+    <p class="text-left">Favorite Dish:</p>
 
-  <div><a ui-sref="public.signup"> Not Signed Up Yet. Sign Up Now! </a></div>
+    <menu-item menu-item="userInfoCtrl.userObj.menuItem"></menu-item>
+  </div>
+
+  <div ng-show="!userInfoCtrl.userObj.completed"
+      class="text-center">Not Signed Up Yet. <a ui-sref="public.signup"> Sign Up Now! </a>
+  </div>
 
 </div>

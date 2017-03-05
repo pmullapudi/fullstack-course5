@@ -4,7 +4,6 @@
 angular.module('common')
 .service('MenuService', MenuService);
 
-
 MenuService.$inject = ['$http', 'ApiPath'];
 function MenuService($http, ApiPath) {
   var service = this;
@@ -27,8 +26,18 @@ function MenuService($http, ApiPath) {
     });
   };
 
+
+  service.getMenuItem = function (menuId) {
+    return $http.get(ApiPath + '/menu_items/'+menuId+'.json')
+      .then(function (response) {
+        return response.data;
+      })
+      .catch(function (error) {
+        console.log("Error: ", error);
+        return "Call Failed";
+      });
+  };
+
 }
-
-
 
 })();
